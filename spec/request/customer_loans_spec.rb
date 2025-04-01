@@ -21,7 +21,7 @@ RSpec.describe Api::CustomersController, type: :request do
     end
 
     context 'when error' do
-      %w[name cpf age income location] .each do |field|
+      %w[name cpf age income location].each do |field|
         it "fails without #{field} field" do
           params = {
             customer: {
@@ -32,7 +32,7 @@ RSpec.describe Api::CustomersController, type: :request do
               location: 'SP'
             }
           }
-          params[:customer][field.to_sym] = ""
+          params[:customer][field.to_sym] = ''
           post api_customers_path, params: params
 
           expect(response).to have_http_status(:unprocessable_entity)
