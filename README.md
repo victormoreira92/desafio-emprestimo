@@ -1,7 +1,7 @@
 
 # Desafio-Empréstimo
 
-Bem-vindo ao projeto **Empréstimos**! Este é um serviço desenvolvido para determinar quais modalidades de empréstimo uma pessoa tem acesso com base em variáveis como idade, salário e localização. O objetivo é fornecer uma API simples e eficiente que analisa os dados de um cliente e retorna as opções de empréstimos disponíveis, incluindo tipos e taxas de juros.
+Bem-vindo ao projeto **Desafio Empréstimos**! Este é uma API Rest baseada no desafio [BackEnd-BR](https://github.com/backend-br/desafios/blob/master/loans/PROBLEM.md) desenvolvido para determinar quais modalidades de empréstimo uma pessoa tem acesso com base em variáveis como idade, salário e localização.
 
 ## Visão Geral
 
@@ -22,7 +22,7 @@ Este endpoint recebe os dados do cliente e retorna as modalidades de empréstimo
 ```json
 {
     "age": 26,
-    "cpf": "275.484.389-23",
+    "cpf": "27548438923",
     "name": "Vuxaywua Zukiagou",
     "income": 7000.00,
     "location": "SP"
@@ -30,11 +30,11 @@ Este endpoint recebe os dados do cliente e retorna as modalidades de empréstimo
 ```
 
 - **Parâmetros**:
-  - `age` (integer) Idade do cliente.
-  - `cpf` (string): CPF do cliente (formato livre).
-  - `name` (string): Nome completo do cliente.
-  - `income` (float): Salário mensal do cliente em reais.
-  - `location` (string): Sigla do estado onde o cliente reside (ex.: "SP").
+  - `age` (integer *obrigatório) Idade do cliente.
+  - `cpf` (string *obrigatório): CPF do cliente (formato livre).
+  - `name` (string *obrigatório): Nome completo do cliente.
+  - `income` (float *obrigatório): Salário mensal do cliente em reais.
+  - `location` (string *obrigatório): Sigla do estado onde o cliente reside (ex.: "SP").
 
 #### Resposta
 **Status**: `200 OK`
@@ -86,8 +86,8 @@ Para rodar o projeto localmente, você precisará de:
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/emprestimos.git
-   cd emprestimos
+   git clone https://github.com/victormoreira92/desafio-emprestimo.git
+   cd desafio-emprestimo
    ```
 
 2. **Instale as dependências**:
@@ -132,20 +132,8 @@ Você receberá uma resposta JSON com as modalidades de empréstimo disponíveis
 
 Os testes estão localizados em `spec/` e podem ser executados com:
 ```bash
-rspec
+bundle exec rspec
 ```
-
-## Soluções da Comunidade
-
-Consulte o arquivo [SOLUTIONS.md](SOLUTIONS.md) para ver implementações alternativas feitas por outros membros da comunidade.
-
-## Contribuição
-
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature (`git checkout -b minha-feature`).
-3. Commit suas mudanças (`git commit -m "Adiciona minha feature"`).
-4. Envie para o repositório remoto (`git push origin minha-feature`).
-5. Abra um Pull Request.
 
 ## Licença
 
