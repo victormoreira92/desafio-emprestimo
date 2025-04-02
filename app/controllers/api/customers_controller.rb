@@ -1,7 +1,7 @@
 module Api
   class CustomersController < ApplicationController
 
-    # POST /customers
+    # POST /api/customers-loans
     def create
       @customer = Customer.new(customer_params)
 
