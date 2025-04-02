@@ -12,18 +12,18 @@ module Api
         render json: { error: @customer.errors }, status: :unprocessable_entity
       end
     end
-    
+
     private
 
-      def customer_params
-        params.require(:customer).permit(:age, :name, :cpf, :income, :location)
-      end
+    def customer_params
+      params.require(:customer).permit(:age, :name, :cpf, :income, :location)
+    end
 
-      def loan_attributes(loan)
-        {
-          type: loan.type_loan.upcase,
-          interest_rate: loan.interest_rate
-        }
-      end
+    def loan_attributes(loan)
+      {
+        type: loan.type_loan.upcase,
+        interest_rate: loan.interest_rate
+      }
+    end
   end
 end
